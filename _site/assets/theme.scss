@@ -1,0 +1,44 @@
+/* The color scheme
+*/
+
+
+$color: #363636;
+$background: #f1f1f1;
+
+/* OSF TTF colors */
+$red: #990000;
+$blue: #477688;
+$gray: #eee;
+$yellow: #F9F4D6;
+$lightblue: #E7F2F7;
+
+
+
+
+body {
+  @include font(normal);
+  @include link(normal);
+  
+  background: white;
+  
+  .container {
+    
+    #header {
+      background: image-url("background.jpg") no-repeat 0 0 $gray;
+      background-size: cover;
+    }
+    
+    #content {
+      background: $red;
+      color: $background;
+      
+      article {
+        @include text;
+      }
+    } 
+    
+  }
+}
+
+
+  

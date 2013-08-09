@@ -1,0 +1,36 @@
+
+body {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    
+    #header, #content, #footer {
+      @include block;
+    }
+    
+    #header {
+      hgroup {
+        width: $minor;
+        margin: $minor/2;
+      }
+    }
+    
+    #content {
+      article {
+        width: $major;
+        margin-left: $minor/2;
+      }
+    }
+    
+    #footer {
+      width: $major;
+      margin-left: $minor/2;
+    }
+  }
+}
+
+
+
+
+
+
