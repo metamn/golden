@@ -55,7 +55,7 @@ $breakpoint-a4-height: 1122.51px !default;
 	}
 }
 @mixin small-screen-and-below {
-	@media only screen and (max-width : $breakpoint-small - 1) {
+	@media only screen and (max-width : $breakpoint-small) {
 		@content;
 	}
 }
@@ -163,15 +163,36 @@ $breakpoint-a4-height: 1122.51px !default;
 
 @mixin text($type: '') {
   @if $type == reset {
-    
     line-height: 1.25;
-    font-size: 100%;
     max-width: none;
-    padding: 0;
     
   } @else {
     line-height: 1.75;
     max-width: 600px;
+    
+    /* On large screen images can be wider than 600px 
+    */
+    figure {
+      @include small-screen-and-up {
+        display: inline-block;
+        max-width: 65em;
+      }
+      
+    }
+    
+    /* Tables must be responsive
+    */
+    table {
+      td, tr, th {
+        @include mobile {
+          font-size: small;
+        }
+        
+        @include tablet-and-below {
+          padding: $pad/4;
+        }
+      }
+    }
   }
 }
 

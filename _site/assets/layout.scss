@@ -11,20 +11,20 @@ body {
     #header {
       hgroup {
         width: $minor;
-        margin: $minor/2;
+        margin: $margin;
       }
     }
     
     #content {
       article {
         width: $major;
-        margin-left: $minor/2;
+        margin-left: $margin;
       }
     }
     
     #footer {
       width: $major;
-      margin-left: $minor/2;
+      margin-left: $margin;
     }
   }
 }

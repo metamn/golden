@@ -98,7 +98,12 @@ body a { color: #990000; text-decoration: none; }
 body a:hover { color: #363636; text-decoration: underline; }
 body .container #header { background: url('/assets/background.jpg?1376038026') no-repeat 0 0 #eeeeee; background-size: cover; }
 body .container #content { background: #990000; color: #f1f1f1; }
-body .container #content article { line-height: 1.75; max-width: 600px; }
+body .container #content article { line-height: 1.75; max-width: 600px; /* On large screen images can be wider than 600px 
+*/ /* Tables must be responsive
+*/ }
+@media only screen and (min-width: 1025px) { body .container #content article figure { display: inline-block; max-width: 65em; } }
+@media (max-width: 380px) { body .container #content article table td, body .container #content article table tr, body .container #content article table th { font-size: small; } }
+@media only screen and (max-width: 767px) { body .container #content article table td, body .container #content article table tr, body .container #content article table th { padding: 0.3125em; } }
 
 .outline { display: none; }
 
