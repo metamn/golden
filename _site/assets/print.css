@@ -93,7 +93,7 @@ body .container #footer { width: 61.804%; margin-left: 19.098%; }
 /* The color scheme
 */
 /* OSF TTF colors */
-body { font-family: 'Lato', sans-serif; font-weight: 300; background: white; }
+body { font-family: 'Lato', sans-serif; background: white; }
 body a { color: #990000; text-decoration: none; }
 body a:hover { color: #363636; text-decoration: underline; }
 body .container #header { background: url('/assets/background.jpg?1376038026') no-repeat 0 0 #eeeeee; background-size: cover; }
