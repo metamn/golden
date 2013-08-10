@@ -56,17 +56,20 @@ body {
         
         figure {
           margin: $pad 0;
-          border: $pad*3 outset $gray;
+          border: 1px outset $gray;
+          background: white;
+          
+          img {
+            padding: $pad*3;
+          }
           
           figcaption {
             font-size: smaller;
             font-weight: 300;
             
             position: relative;
-            top: $pad*2;
-            margin-left: $pad;
-            
-            color: $background;
+            top: -$pad*2;
+            margin-left: $pad*3 + $pad/2;
           }
         }
         

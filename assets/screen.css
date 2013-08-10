@@ -106,8 +106,9 @@ body .container #content article { line-height: 1.5; max-width: 600px; /* On lar
 @media only screen and (max-width: 767px) { body .container #content article table td, body .container #content article table tr, body .container #content article table th { padding: 0.3125em; } }
 body .container #content article ol li { border-bottom: 1px solid #ececec; }
 body .container #content article ul li { margin-bottom: 1.25em; }
-body .container #content article figure { margin: 1.25em 0; border: 3.75em outset #bebebe; }
-body .container #content article figure figcaption { font-size: smaller; font-weight: 300; position: relative; top: 2.5em; margin-left: 1.25em; color: #f1f1f1; }
+body .container #content article figure { margin: 1.25em 0; border: 1px outset #bebebe; background: white; }
+body .container #content article figure img { padding: 3.75em; }
+body .container #content article figure figcaption { font-size: smaller; font-weight: 300; position: relative; top: -2.5em; margin-left: 4.375em; }
 body .container #content article q, body .container #content article blockquote { background: #363636; color: #f1f1f1; }
 
 .outline { display: none; }
