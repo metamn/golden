@@ -33,18 +33,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 */
 /* Site specific mixins
 */
-/* Set different link types
+/* Body text style
 */
-/* Set different font types
-*/
-body { font-size: 100%; line-height: 1.25; }
-body .container { /* Headings -----------------------------------------------
-*/ /* Headings dont differ by size but by decoration - vertical rhythm is maintained by padding
-*/ /* Block level elements
+body { font-size: 125%; line-height: 1.25; font-weight: 300; font-family: 'Lato', sans-serif; }
+body .container { /* Block level elements
 // -----------------------------------------------
 */ /* the second <p> has a top margin */ /* blockquote is simply indented, enlarged */ /* address is small caps */ /* Lists
 // -----------------------------------------------
 */ /* Tables
+// -----------------------------------------------
+*/ /* Images
 // -----------------------------------------------
 */ /* Text styles
 // -----------------------------------------------
@@ -53,9 +51,14 @@ body .container { /* Headings -----------------------------------------------
 */ /* Reset browser defaults */ /* Text */ /* Button */ /* Cross browser compatible styling: http://www.inserthtml.com/2012/06/custom-form-radio-checkbox/ - the checkbox and radio button is not displayed - instead a label is displayed which can be styled with 'content' 
 */ /* Select box  - put inside a <label class="select"> - label:after is positioned over the original selectbox arrow - additionally padding & relative positioning must be overwritten later in the new context
 */ }
-body .container h1, body .container h2, body .container h3, body .container h4, body .container h5, body .container h6 { font-size: 1.5em; padding: 1.25em 0; margin-top: 0; margin-bottom: 0; }
+body .container h1, body .container h2, body .container h3 { margin-top: 0; font-size: 1.16667em; margin-bottom: 0; }
+body .container h1, body .container h2 { padding: 1.51785em 0; }
+body .container h3 { padding: 1.51786em 0; }
+body .container h1 { font-weight: 900; }
+body .container h2 { font-weight: 700; }
+body .container h3 { font-weight: normal; }
 body .container p + p { margin-top: 1.25em; }
-body .container q, body .container blockquote { display: block; margin: 2.5em; border-left: 1px dotted; padding-left: 1.25em; font-style: italic; font-size: larger; }
+body .container q, body .container blockquote { display: block; margin: 2.5em 1.25em; margin-left: 0; border-left: 1.25em solid; padding-left: 1.25em; font-size: larger; }
 body .container address { font-variant: small-caps; }
 body .container ul, body .container menu, body .container dir, body .container ol { margin: 1.25em; list-style-type: square; }
 body .container ol { list-style-type: decimal; }
@@ -63,6 +66,7 @@ body .container dl { margin: 1.25em 0; }
 body .container dl dt { font-weight: bold; text-transform: uppercase; margin: 1.25em 0; }
 body .container dl dd { margin: 0.3125em; margin-bottom: 0.625em; }
 body .container dl dd + dt { margin-top: 2.5em; }
+body .container h1 + ul, body .container h2 + ul, body .container h3 + ul, body .container h1 + ol, body .container h2 + ol, body .container h3 + ol { margin-top: 0; }
 body .container table { margin: 1.25em 0 2.5em; }
 body .container table thead tr td { font-weight: bold; }
 body .container table tbody { border-top: 1px dotted; border-bottom: 1px dotted; }
@@ -92,18 +96,20 @@ body .container #footer { width: 61.804%; margin-left: 19.098%; }
 
 /* The color scheme
 */
-/* OSF TTF colors */
-body { font-family: 'Lato', sans-serif; background: white; }
-body a { color: #990000; text-decoration: none; }
+body { background: white; color: #363636; }
+body a { color: #714f4f; text-decoration: none; }
 body a:hover { color: #363636; text-decoration: underline; }
-body .container #header { background: url('/assets/background.jpg?1376038026') no-repeat 0 0 #eeeeee; background-size: cover; }
-body .container #content { background: #990000; color: #f1f1f1; }
-body .container #content article { line-height: 1.75; max-width: 600px; /* On large screen images can be wider than 600px 
+body .container #content { background: #f1f1f1; }
+body .container #content article { line-height: 1.5; max-width: 600px; font-weight: normal; /* On large screen images can be wider than 600px 
 */ /* Tables must be responsive
 */ }
 @media only screen and (min-width: 1025px) { body .container #content article figure { display: inline-block; max-width: 65em; } }
 @media (max-width: 380px) { body .container #content article table td, body .container #content article table tr, body .container #content article table th { font-size: small; } }
 @media only screen and (max-width: 767px) { body .container #content article table td, body .container #content article table tr, body .container #content article table th { padding: 0.3125em; } }
+body .container #content article ol li { border-bottom: 1px solid #ececec; }
+body .container #content article ul li { margin-bottom: 1.25em; }
+body .container #content article figure { margin: 1.25em 0; border: 3.75em solid white; }
+body .container #content article figure figcaption { font-size: smaller; font-weight: 300; position: relative; top: 2.5em; }
 
 .outline { display: none; }
 

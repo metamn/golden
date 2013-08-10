@@ -5,35 +5,67 @@
 $color: #363636;
 $background: #f1f1f1;
 
-/* OSF TTF colors */
-$red: #990000;
-$blue: #477688;
-$gray: #eee;
-$yellow: #F9F4D6;
-$lightblue: #E7F2F7;
+$pink: #F3AAAA;
+$brown: #714F4F;
 
+$border: darken($background, 2%);
+$caption: lighten($color, 20%);
 
 
 
 body {
-  @include font(normal);
-  @include link(normal);
-  
   background: white;
+  color: $color;
+  
+  a {
+    color: $brown;
+    text-decoration: none;
+    
+    &:hover {
+      color: $color;
+      text-decoration: underline;
+    }
+  }
+  
   
   .container {
     
     #header {
-      background: image-url("background.jpg") no-repeat 0 0 $gray;
-      background-size: cover;
+      //background: image-url("background.jpg") no-repeat 0 0 $gray;
+      //background-size: cover;
     }
     
+    
+    
     #content {
-      background: $red;
-      color: $background;
+      background: $background;
       
       article {
         @include text;
+        
+        ol {
+          @include list($border);
+        }
+        
+        ul {
+          li {
+            margin-bottom: $pad;
+          }
+        }
+        
+        figure {
+          margin: $pad 0;
+          border: $pad*3 solid white;
+          
+          figcaption {
+            font-size: smaller;
+            font-weight: 300;
+            
+            position: relative;
+            top: $pad*2;
+          }
+        }
+    
       }
     } 
     

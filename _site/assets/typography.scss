@@ -1,23 +1,69 @@
+/* Body text style
+*/
+@mixin text($type: '') {
+  @if $type == reset {
+    line-height: 1.25;
+    max-width: none;
+    
+  } @else {
+    line-height: 1.5;
+    max-width: 600px;
+    font-weight: normal;
+    
+    
+    /* On large screen images can be wider than 600px 
+    */
+    figure {
+      @include small-screen-and-up {
+        display: inline-block;
+        max-width: 65em;
+      }
+      
+    }
+    
+    /* Tables must be responsive
+    */
+    table {
+      td, tr, th {
+        @include mobile {
+          font-size: small;
+        }
+        
+        @include tablet-and-below {
+          padding: $pad/4;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
 body {
-  font-size: 100%;
-  line-height: 1.25;
+  font-size: 125%; 
+  line-height: 1.25; 
+  
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
   
   .container {
+    h1, h2, h3 { margin-top:0; font-size:1.16667em; margin-bottom:0; }
+    h1, h2 { padding:1.51785em 0; }
+    h3 { padding:1.51786em 0; }
     
-    /* Headings
-     -----------------------------------------------
-    */
-
-    /* Headings dont differ by size but by decoration
-     - vertical rhythm is maintained by padding
-    */
-
-    h1, h2, h3, h4, h5, h6 {
-	    font-size: 1.5em;
-	    
-      padding: 1.25em 0;
-	    margin-top: 0; 
-	    margin-bottom: 0;
+    h1 {
+      font-weight: 900;
+    }
+    
+    h2 {
+      font-weight: 700;
+    }
+    
+    h3 {
+      font-weight: normal;
     }
     
     
@@ -35,12 +81,12 @@ body {
     /* blockquote is simply indented, enlarged */
     q, blockquote {
       display: block;
-	    margin: $pad*2;
-	
-	    border-left: 1px dotted;
+      
+	    margin: $pad*2 $pad;
+	    margin-left: 0;
+	    border-left: $pad solid;
 	    padding-left: $pad;
 	
-	    font-style: italic;
 	    font-size: larger;
     }
 
@@ -48,6 +94,7 @@ body {
     address {
 	    font-variant: small-caps;
     }
+
 
 
     /* Lists
@@ -62,6 +109,7 @@ body {
     ol {
 	    list-style-type: decimal;
     }
+    
 
     dl {
 	    margin: $pad 0;
@@ -80,13 +128,18 @@ body {
         margin-top: $pad*2;
       }
     }
+    
+    h1 + ul, h2 + ul, h3 + ul,
+    h1 + ol, h2 + ol, h3 + ol {
+      margin-top: 0;
+    }
+    
 
 
 
     /* Tables
     // -----------------------------------------------
     */
-
     
     table {
 	    margin: $pad 0 $pad*2;
@@ -114,6 +167,13 @@ body {
 	      border-bottom: 1px solid;
 	    }
     }
+    
+    
+    
+    /* Images
+    // -----------------------------------------------
+    */
+    
     
 
 
@@ -248,9 +308,6 @@ body {
 
   }
 }
-
-
-
 
 
 

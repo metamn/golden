@@ -115,83 +115,11 @@ $breakpoint-a4-height: 1122.51px !default;
 */
 
 
-/*
-  Set different link types
-*/
-@mixin link($type : normal) {
-  @if $type == "normal" {
-    a {
-      color: $red;
-      text-decoration: none;
-      
-      &:hover {
-        color: $color;
-        text-decoration: underline;
-      }
-    }
-  
-  } @else if $type == "ttf" {
-    a {
-      color: $color;
-      text-decoration: none;
-      
-      &:hover {
-        color: $red;
-      }
-    }
- }   
-}
-
-
-/*
-  Set different font types
-*/
-@mixin font($type : normal) {
-  @if $type == "normal" {
-    font-family: 'Lato', sans-serif;
-    
-  } @else if $type == "ttf" {
-    font-family: 'league-gothic', sans-serif;
-    font-weight: normal;
-    text-transform: uppercase;
-    font-size: 2.5em; /* 40px */
- }
-    
-}
-
-
-@mixin text($type: '') {
-  @if $type == reset {
-    line-height: 1.25;
-    max-width: none;
-    
-  } @else {
-    line-height: 1.75;
-    max-width: 600px;
-    
-    /* On large screen images can be wider than 600px 
-    */
-    figure {
-      @include small-screen-and-up {
-        display: inline-block;
-        max-width: 65em;
-      }
-      
-    }
-    
-    /* Tables must be responsive
-    */
-    table {
-      td, tr, th {
-        @include mobile {
-          font-size: small;
-        }
-        
-        @include tablet-and-below {
-          padding: $pad/4;
-        }
-      }
-    }
+@mixin list($c: $color) {
+  li {
+    border-bottom: 1px solid $c;
   }
 }
+
+
 
