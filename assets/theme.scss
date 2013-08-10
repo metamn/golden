@@ -7,6 +7,7 @@ $background: #f1f1f1;
 
 $pink: #F3AAAA;
 $brown: #714F4F;
+$gray: #BEBEBE;
 
 $border: darken($background, 2%);
 $caption: lighten($color, 20%);
@@ -55,7 +56,7 @@ body {
         
         figure {
           margin: $pad 0;
-          border: $pad*3 solid white;
+          border: $pad*3 outset $gray;
           
           figcaption {
             font-size: smaller;
@@ -63,7 +64,15 @@ body {
             
             position: relative;
             top: $pad*2;
+            margin-left: $pad;
+            
+            color: $background;
           }
+        }
+        
+        q, blockquote {
+	        background: $color;
+	        color: $background;
         }
     
       }
