@@ -84,21 +84,43 @@ body .container input[type='checkbox']:checked + label:before { content: '\2611'
 body .container select { border-bottom: 1px solid gray; cursor: pointer; width: 100%; }
 body .container label.select:after { content: '\003E'; float: right; display: inline-block; padding: 0 .45em; position: relative; left: 0; background: white; pointer-events: none; /* this is a must */ cursor: pointer; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); }
 
-body .container { width: 100%; margin: 0 auto; }
-body .container #header, body .container #content, body .container #footer { width: 100%; float: left; }
-body .container #header hgroup { width: 38.196%; margin: 19.098%; }
-body .container #content article { width: 61.804%; margin-left: 19.098%; }
-body .container #footer { width: 61.804%; margin-left: 19.098%; }
+/* Set all parents to full height */
+html, body, .container, #content { height: 100%; }
+
+body .container { width: 100%; float: left; }
+body .container #content { width: 100%; float: left; }
+body .container #content article { width: 100%; float: left; }
+body .container #content article:nth-of-type(1) { width: 38.196%; height: 61.804%; }
+body .container #content article:nth-of-type(1) figure { margin: 38.196% 0 0 38.196%; }
+body .container #content article:nth-of-type(1) figure img { width: 150px; display: none; }
+body .container #content article:nth-of-type(1) h1, body .container #content article:nth-of-type(1) p { margin-left: 38.196%; }
+body .container #content article:nth-of-type(1) p { font-size: larger; margin-bottom: 1.25em; }
+body .container #content article:nth-of-type(2) { width: 56.804%; height: 100%; margin-left: 5%; float: right; }
+body .container #content article:nth-of-type(2) dl { display: none; }
+body .container #content article:nth-of-type(3) { width: 38.196%; height: 38.196%; }
+body .container #content article:nth-of-type(3) ul { margin: 0; padding: 0; margin-left: 38.196%; padding-top: 1.25em; list-style: none; }
 
 /* The color scheme
 */
 /* OSF TTF colors */
-body { font-family: 'Lato', sans-serif; font-weight: 300; background: white; }
+body { font-family: 'Lato', sans-serif; font-weight: 300; background: #f1f1f1; }
 body a { color: #990000; text-decoration: none; }
 body a:hover { color: #363636; text-decoration: underline; }
-body .container #header { background: url('/assets/background.jpg?1376038026') no-repeat 0 0 #eeeeee; background-size: cover; }
-body .container #content { background: #990000; color: #f1f1f1; }
-body .container #content article { line-height: 1.75; max-width: 600px; }
+body .container #content article { /*
+&:nth-of-type(1) { background: $red; color: $background;
+}
+
+&:nth-of-type(2) { background: $blue; color: $background;
+}
+
+&:nth-of-type(3) { background: $gray;
+}
+
+&:nth-of-type(4) { background: $yellow;
+}
+*/ }
+body .container #content article:nth-of-type(2) { background: #fff; }
+body .container #content article:nth-of-type(3) ul { border-top: 1px solid #fff; }
 
 .outline { display: none; }
 

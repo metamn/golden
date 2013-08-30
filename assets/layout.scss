@@ -1,31 +1,72 @@
+/* Set all parents to full height */
+html, body, .container, #content {
+  height: 100%;
+}
+
+
 
 body {
   .container {
-    width: 100%;
-    margin: 0 auto;
-    
-    #header, #content, #footer {
-      @include block;
-    }
-    
-    #header {
-      hgroup {
-        width: $minor;
-        margin: $minor/2;
-      }
-    }
+    @include block;
     
     #content {
+      @include block;
+      
       article {
-        width: $major;
-        margin-left: $minor/2;
+        @include block;
+        
+        &:nth-of-type(1) {
+          width: $minor;
+          height: $major;
+          
+          figure {
+            margin: $minor 0 0 $minor;
+            
+            img {
+              width: 150px;
+              display: none;
+            }
+          }
+          
+          h1, p{
+            margin-left: $minor;
+          }
+          
+          p {
+            font-size: larger;
+            margin-bottom: $pad;
+          }
+        }
+        
+        &:nth-of-type(2) {
+          width: $major - $margin;
+          height: 100%;
+          margin-left: $margin;
+          float: right;
+          
+          dl {
+            display: none;
+          }
+        }
+        
+        &:nth-of-type(3) {
+          width: $minor;
+          height: $minor;
+          
+          ul {
+            margin: 0;
+            padding: 0;
+            margin-left: $minor;
+            padding-top: $pad;
+            
+            list-style: none;
+          }
+        }
+        
+        
       }
     }
     
-    #footer {
-      width: $major;
-      margin-left: $minor/2;
-    }
   }
 }
 
